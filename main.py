@@ -11,7 +11,7 @@ class Solution(object):
         
         for word in splited_words:
             for root in sorted_dict:
-                if root in word:
+                if len(root) < len(word) and root in word[0:len(root)]:
                     replaced_word.append(root)
                     break;
                 elif root == sorted_dict[-1]:
